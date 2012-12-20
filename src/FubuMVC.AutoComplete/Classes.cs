@@ -22,17 +22,7 @@ using HtmlTags.Conventions;
 namespace FubuMVC.AutoComplete
 {
     /*
-     *  1.) Register UrlPolicy
-     *  2.) Register ActionSource
-     *  3.) Need to get the AccessorRules to the property binder
-     *  4.) Need to get the AccessorRules to the html conventions
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
-     * 
+
      */
 
 
@@ -42,6 +32,7 @@ namespace FubuMVC.AutoComplete
 
         public bool Matches(ElementRequest subject)
         {
+            // Attribute too
             throw new NotImplementedException();
         }
 
@@ -51,26 +42,7 @@ namespace FubuMVC.AutoComplete
         }
     }
 
-    public class AutoCompleteStringifierStrategy : StringifierStrategy
-    {
-        public AccessorRules Rules { get; set; }
 
-        public AutoCompleteStringifierStrategy()
-        {
-            StringFunction = CreateDisplay;
-            Matches = AccessorMatches;
-        }
-
-        public bool AccessorMatches(GetStringRequest request)
-        {
-            throw new NotImplementedException();
-        }
-
-        public string CreateDisplay(GetStringRequest request)
-        {
-            throw new NotImplementedException();
-        }
-    }
 
 
     public class AutocompleteTagBuilder<T> : IElementBuilder where T : ILookupProvider
@@ -258,15 +230,53 @@ namespace FubuMVC.AutoComplete
     {
         public void Configure(FubuRegistry registry)
         {
+            var tagPolicy = new AutoCompleteTagPolicy();
+            
+
             registry.Actions.FindWith(new LookupActionSource());
             registry.Routes.UrlPolicy<LookupUrlPolicy>();
 
-            // Will need to get at the AccessorRules here
-            //registry.Import<HtmlConventionRegistry>(x => x.Editors.Add());
+            registry.Import<HtmlConventionRegistry>(x => x.Editors.Add(tagPolicy));
 
+            registry.Configure(graph => {
+                var rules = graph.Settings.Get<AccessorRules>();
+
+                var strategy = new AutoCompleteStringifierStrategy(rules);
+                var stringifier = graph.Services.DefaultServiceFor<Stringifier>().Value.As<Stringifier>();
+                stringifier.AddStrategy(strategy);
+
+                tagPolicy.Rules = rules;
+            });
         }
     }
 
+    public class AutoCompleteStringifierStrategy : StringifierStrategy
+    {
+        private readonly AccessorRules _rules;
 
+        public AutoCompleteStringifierStrategy(AccessorRules rules)
+        {
+            _rules = rules;
+
+            Matches = AccessorMatches;
+            StringFunction = CreateDisplay;
+        }
+
+        public bool AccessorMatches(GetStringRequest request)
+        {
+            if (_rules == null)
+            {
+                // go grab it
+            }
+
+            // Attribute too
+            throw new NotImplementedException();
+        }
+
+        public string CreateDisplay(GetStringRequest request)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
 }
