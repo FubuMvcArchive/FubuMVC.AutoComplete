@@ -1,0 +1,23 @@
+﻿<viewdata model="AutoCompleteHarness.RoomTarget"/>
+<using namespace="FubuMVC.Core.Assets"/>
+
+<content:head>
+  <Asset src="jqueryuitheme" />
+</content:head>
+
+<content:main>
+  <h1>Room Lookup</h1>
+  <p>
+    Room:  <Input name="Room"/>
+  </p>
+</content:main>
+
+<content:footer>
+  <script language="javascript">
+    $('.autocomplete').bind("autocompleteChanged", function(target, value){
+      alert(value);
+    });
+  </script>
+</content:footer>
+
+

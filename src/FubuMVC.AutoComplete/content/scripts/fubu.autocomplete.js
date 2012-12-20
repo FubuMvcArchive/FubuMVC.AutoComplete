@@ -16,7 +16,7 @@
                 }
 
                 $(this).prev().val(guidForAutocomplete);
-                $(this).trigger('autocompleteChanged');
+                $(this).trigger('autocompleteChanged', guidForAutocomplete);
                 return false;
             };
 
@@ -66,4 +66,8 @@ $(document).ready(function () {
         setupAutocompletes();
     });
     setupAutocompletes();
+
+    $(document).ready(function () {
+        $("input:text.autocomplete").focus(function () { $(this).select(); });
+    });
 });
