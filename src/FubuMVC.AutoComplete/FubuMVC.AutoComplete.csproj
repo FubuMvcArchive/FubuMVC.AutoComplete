@@ -71,14 +71,27 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="Classes.cs" />
+    <Compile Include="AutoCompleteAttribute.cs" />
+    <Compile Include="AutoCompleteEndpoints.cs" />
+    <Compile Include="AutoCompleteQuery.cs" />
+    <Compile Include="AutoCompleteStringifierStrategy.cs" />
+    <Compile Include="AutoCompleteTagBuilder.cs" />
+    <Compile Include="AutoCompleteTagPolicy.cs" />
+    <Compile Include="LookupActionSource.cs" />
+    <Compile Include="ILookupProvider.cs" />
+    <Compile Include="LookupAccessorRulesExtensions.cs" />
+    <Compile Include="LookupItem.cs" />
+    <Compile Include="LookupMarker.cs" />
+    <Compile Include="LookupUrlPolicy.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleLookup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="content\scripts\" />
+    <Content Include="content\scripts\fubu.autocomplete.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
