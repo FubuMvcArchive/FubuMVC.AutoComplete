@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Test name="Sample failure" lifecycle="Acceptance">
+  <Model>
+    <TheUsersAre isStep="True">
+      <Rows>
+        <row isStep="True" Id="123" Name="Arnold, Joshua" />
+        <row isStep="True" Id="456" Name="Arnold, Joel" />
+        <row isStep="True" Id="789" Name="Arnold, Olivia" />
+      </Rows>
+    </TheUsersAre>
+  </Model>
+  <AutoComplete>
+    <EnterUser isStep="True" User="Arnold, Josh" />
+  </AutoComplete>
+</Test>

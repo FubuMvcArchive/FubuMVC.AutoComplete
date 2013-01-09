@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<Test name="Finds the proper item" lifecycle="Acceptance">
+  <Model>
+    <TheUsersAre isStep="True">
+      <Rows>
+        <row isStep="True" Id="123" Name="Joel" />
+        <row isStep="True" Id="456" Name="Olivia" />
+      </Rows>
+    </TheUsersAre>
+  </Model>
+  <AutoComplete>
+    <EnterUser isStep="True" User="Joel" />
+    <CheckUser isStep="True" User="Joel" />
+  </AutoComplete>
+</Test>

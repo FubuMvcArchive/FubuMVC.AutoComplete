@@ -26,3 +26,5 @@ results
 *.DotSettings.user
 bottles.cmd
 *.nupkg
+storyteller.cmd
+run_st.cmd
