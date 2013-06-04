@@ -28,3 +28,11 @@ bottles.cmd
 *.nupkg
 storyteller.cmd
 run_st.cmd
+testEditor.css
+Controls
+Core
+editor.htm
+External
+history.xml
+logs
+Gemfile.lock
