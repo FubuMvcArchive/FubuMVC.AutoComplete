@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ProjectRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TagLine>Quick integration of jquery.ui's AutoComplete plugin into a FubuMVC application</TagLine>
+  <Name>FubuMVC.AutoComplete</Name>
+  <GitHubPage>http://github.com/DarthFubuMVC/FubuMVC.AutoComplete</GitHubPage>
+  <UserGroupUrl>https://groups.google.com/forum/?fromgroups#!forum/fubumvc-devel</UserGroupUrl>
+  <BuildServerUrl>http://build.fubu-project.org/project.html?projectId=project52&amp;tab=projectOverview</BuildServerUrl>
+  <BottleName>FubuMVC.AutoComplete.Docs</BottleName>
+  <TeamCityBuildType>bt90</TeamCityBuildType>
+  <Nugets>
+    <PublishedNuget>
+      <Name>FubuMVC.AutoComplete</Name>
+      <Description>Quick integration of jquery.ui's AutoComplete plugin into a FubuMVC application</Description>
+    </PublishedNuget>
+    <PublishedNuget>
+      <Name>FubuMVC.AutoComplete.Serenity</Name>
+      <Description>Quick serenity integration for testing against the FubuMVC.AutoComplete bottle.</Description>
+    </PublishedNuget>
+  </Nugets>
+  <Url>fubumvc.autocomplete</Url>
+</ProjectRoot>
