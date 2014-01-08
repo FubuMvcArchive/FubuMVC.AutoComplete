@@ -77,9 +77,9 @@
     <Compile Include="AutoCompleteStringifierStrategy.cs" />
     <Compile Include="AutoCompleteTagBuilder.cs" />
     <Compile Include="AutoCompleteTagPolicy.cs" />
-    <Compile Include="LookupActionSource.cs" />
     <Compile Include="ILookupProvider.cs" />
     <Compile Include="LookupAccessorRulesExtensions.cs" />
+    <Compile Include="LookupActionSource.cs" />
     <Compile Include="LookupItem.cs" />
     <Compile Include="LookupMarker.cs" />
     <Compile Include="LookupUrlPolicy.cs" />
@@ -108,9 +108,5 @@
     <EmbeddedResource Include="pak-WebContent.zip" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="pak-Data.zip" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="pak-Config.zip" />
   </ItemGroup>
 </Project>
